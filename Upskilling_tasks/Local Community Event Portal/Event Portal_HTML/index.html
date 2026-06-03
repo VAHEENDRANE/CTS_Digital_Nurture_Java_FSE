@@ -367,7 +367,8 @@ function showFee() {
 
     alert("Preferences Cleared");
 }
-
+// BREAKPOINT LOCATION:
+// Set breakpoint here in Chrome Sources Tab
 function findLocation() {
 
     if (navigator.geolocation) {
@@ -390,6 +391,16 @@ function findLocation() {
 }
 
 function showPosition(position) {
+
+    console.log(
+        "Latitude:",
+        position.coords.latitude
+    );
+
+    console.log(
+        "Longitude:",
+        position.coords.longitude
+    );
 
     document.getElementById("locationResult").innerHTML =
         "Latitude: " +
