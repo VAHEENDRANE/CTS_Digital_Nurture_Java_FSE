@@ -438,3 +438,69 @@ textarea:focus {
 
     text-align: justify;
 }
+
+/* =========================
+   Responsive Design
+========================= */
+
+/* =========================
+   Flexbox Layout
+========================= */
+
+
+
+@media screen and (max-width: 768px) {
+
+    /* Navigation Vertical */
+
+    nav li {
+
+        display: block;
+
+        margin: 10px 0;
+
+        text-align: center;
+    }
+
+    /* Smaller Images */
+
+    .image-border {
+
+        width: 120px;
+
+        height: 100px;
+    }
+
+    /* Smaller Text */
+
+    h1 {
+
+        font-size: 24px;
+    }
+
+    h2 {
+
+        font-size: 20px;
+    }
+
+    p {
+
+        font-size: 14px;
+    }
+
+    /* Form Width */
+
+    form {
+
+        width: 95%;
+    }
+}
+
+.eventCard {
+    width: 90%;
+}
+
+#mainHeader {
+    font-size: 3vw;
+    padding: 2vh;
+}
