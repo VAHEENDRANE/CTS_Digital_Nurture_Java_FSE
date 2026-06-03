@@ -250,6 +250,14 @@
 
             <p id="videoStatus"></p>
 
+            <h2>Event Location Finder</h2>
+
+<button type="button" onclick="findLocation()">
+    Find Nearby Events
+</button>
+
+<p id="locationResult"></p>
+
         </section>
 
         <section id="contact">
@@ -349,6 +357,61 @@ function showFee() {
     sessionStorage.clear();
 
     alert("Preferences Cleared");
+}
+
+function findLocation() {
+
+    if (navigator.geolocation) {
+
+        navigator.geolocation.getCurrentPosition(
+            showPosition,
+            showError,
+            {
+                enableHighAccuracy: true,
+                timeout: 10000,
+                maximumAge: 0
+            }
+        );
+    }
+    else {
+
+        document.getElementById("locationResult").innerHTML =
+            "Geolocation is not supported by this browser.";
+    }
+}
+
+function showPosition(position) {
+
+    document.getElementById("locationResult").innerHTML =
+        "Latitude: " +
+        position.coords.latitude +
+        "<br>Longitude: " +
+        position.coords.longitude;
+}
+
+function showError(error) {
+
+    switch (error.code) {
+
+        case error.PERMISSION_DENIED:
+            document.getElementById("locationResult").innerHTML =
+                "User denied the request for Geolocation.";
+            break;
+
+        case error.POSITION_UNAVAILABLE:
+            document.getElementById("locationResult").innerHTML =
+                "Location information is unavailable.";
+            break;
+
+        case error.TIMEOUT:
+            document.getElementById("locationResult").innerHTML =
+                "The request timed out.";
+            break;
+
+        default:
+            document.getElementById("locationResult").innerHTML =
+                "An unknown error occurred.";
+    }
 }
 
             let feedback =
