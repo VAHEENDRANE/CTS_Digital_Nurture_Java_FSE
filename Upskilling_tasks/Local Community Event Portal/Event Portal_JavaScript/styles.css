@@ -1,0 +1,506 @@
+/* =========================
+   Universal Selector
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   Body Background Styling
+========================= */
+
+body {
+    background-color: #e6f2ff; /* Fallback Color */
+
+    background-image: url("images/city.jpg");
+
+    background-repeat: no-repeat;
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-attachment: fixed;
+}
+
+
+/* =========================
+   Banner Styling (HEX Colors)
+========================= */
+
+#mainHeader {
+    background-color: #003366;
+
+    color: #FFFFFF;
+
+    text-align: center;
+
+    padding: 20px;
+
+    font-size: 28px;
+}
+
+
+/* =========================
+   Event Card Styling (RGBA)
+========================= */
+
+/* =========================
+   Box Model Example
+========================= */
+
+.eventCard {
+    background-color: rgba(255, 255, 255, 0.8);
+
+    border: 3px solid #003366;
+
+    padding: 25px;
+
+    margin: 25px;
+
+    border-radius: 10px;
+}
+
+
+/* =========================
+   Gradient Section Headers
+========================= */
+
+h2 {
+    background: linear-gradient(
+        to right,
+        #003366,
+        #00AEEF
+    );
+
+    color: white;
+
+    padding: 10px;
+
+    text-align: center;
+
+    border-radius: 5px;
+
+    margin-bottom: 15px;
+}
+
+
+/* =========================
+   Highlight Styles
+========================= */
+
+.highlight {
+    background-color: yellow;
+}
+
+
+/* =========================
+   Image Styles
+========================= */
+
+.image-border {
+    border: 3px solid black;
+    width: 200px;
+    height: 150px;
+    cursor: pointer;
+}
+
+
+/* =========================
+   Table Styles
+========================= */
+
+/* =========================
+   Table Styling
+========================= */
+
+table {
+    width: 90%;
+
+    margin: auto;
+
+    border-collapse: collapse;
+
+    background-color: #f8f9fa;
+}
+
+
+/* Table Header */
+
+th {
+    border: 2px solid black;
+
+    padding: 12px;
+
+    background-color: #003366;
+
+    color: white;
+
+    text-align: center;
+}
+
+
+/* Table Data */
+
+td {
+    border: 2px solid black;
+
+    padding: 12px;
+
+    background-color: #ffffff;
+
+    text-align: center;
+}
+
+
+/* Zebra Striping */
+
+tr:nth-child(even) {
+    background-color: #e6f2ff;
+}
+
+/* =========================
+   Form Styles
+========================= */
+
+form {
+    width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+
+/* =========================
+   Input Styles
+========================= */
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   Button Styles
+========================= */
+
+button {
+    background-color: #007BFF;
+
+    color: white;
+
+    padding: 10px 20px;
+}
+
+
+/* =========================
+   Output Styles
+========================= */
+
+output {
+    display: block;
+
+    margin-top: 10px;
+
+    font-weight: bold;
+
+    color: green;
+}
+
+
+/* =========================
+   Fee Styles
+========================= */
+
+#fee {
+    color: blue;
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   Character Count Styles
+========================= */
+
+#charCount {
+    color: green;
+}
+
+
+/* =========================
+   Phone Message Styles
+========================= */
+
+#phoneMessage {
+    color: red;
+}
+
+
+/* =========================
+   Video Status Styles
+========================= */
+
+#videoStatus {
+    color: green;
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   Grouping Selector
+========================= */
+
+h3,
+p {
+    color: #003366;
+}
+
+
+/* =========================
+   Typography Styling
+========================= */
+
+/* Entire Website Font */
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+
+/* Main Banner */
+
+#mainHeader {
+    font-size: 32px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+
+/* Section Headers */
+
+h2 {
+    font-size: 24px;
+
+    font-weight: 600;
+
+    font-style: italic;
+}
+
+
+/* Sub Headings */
+
+h3 {
+    font-size: 20px;
+
+    font-weight: 500;
+
+    text-align: center;
+}
+
+
+/* Description Paragraphs */
+
+p {
+    font-size: 16px;
+
+    line-height: 1.8;
+
+    letter-spacing: 1px;
+
+    text-align: justify;
+
+    text-transform: capitalize;
+}
+
+
+/* Form Labels */
+
+label {
+    font-size: 15px;
+
+    font-weight: bold;
+}
+
+/* =========================
+   Link Styling
+========================= */
+
+a:link {
+    color: blue;
+    text-decoration: none;
+}
+
+a:visited {
+    color: purple;
+}
+
+a:hover {
+    color: red;
+    text-decoration: underline;
+}
+
+a:active {
+    color: orange;
+}
+
+
+/* =========================
+   List Styling
+========================= */
+
+ul {
+    list-style-type: square;
+
+    list-style-position: inside;
+}
+
+
+/* Remove Bullets from Navigation */
+
+nav ul {
+    list-style-type: none;
+
+    margin: 0;
+
+    padding: 0;
+}
+
+
+/* Navigation Menu Items */
+
+nav li {
+    display: inline-block;
+
+    padding: 10px;
+
+    margin: 5px;
+}
+
+
+/* General List Item Styling */
+
+li {
+    padding: 5px;
+
+    margin: 5px;
+}
+
+/* =========================
+   Form Field Outline
+========================= */
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 3px solid orange;
+}
+
+/* =========================
+   Visibility Example
+========================= */
+
+.hiddenExample {
+    visibility: hidden;
+}
+
+.noneExample {
+    display: none;
+}
+
+/* =========================
+   Multi Column Layout
+========================= */
+
+.newsArticle p {
+
+    column-count: 2;
+
+    column-gap: 30px;
+
+    column-rule: 1px solid gray;
+
+    text-align: justify;
+}
+
+/* =========================
+   Responsive Design
+========================= */
+
+/* =========================
+   Flexbox Layout
+========================= */
+
+
+
+@media screen and (max-width: 768px) {
+
+    /* Navigation Vertical */
+
+    nav li {
+
+        display: block;
+
+        margin: 10px 0;
+
+        text-align: center;
+    }
+
+    /* Smaller Images */
+
+    .image-border {
+
+        width: 120px;
+
+        height: 100px;
+    }
+
+    /* Smaller Text */
+
+    h1 {
+
+        font-size: 24px;
+    }
+
+    h2 {
+
+        font-size: 20px;
+    }
+
+    p {
+
+        font-size: 14px;
+    }
+
+    /* Form Width */
+
+    form {
+
+        width: 95%;
+    }
+}
+
+.eventCard {
+    width: 90%;
+}
+
+#mainHeader {
+    font-size: 3vw;
+    padding: 2vh;
+}
