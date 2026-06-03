@@ -1,0 +1,21 @@
+/* Header Styles */
+
+header {
+    text-align: center;
+    padding: 20px;
+}
+
+/* Main Content Styles */
+
+main {
+    text-align: center;
+}
+
+/* Button Styles */
+
+.cta-button {
+    background-color: blue;
+    color: white;
+    padding: 10px;
+    border: none;
+}
