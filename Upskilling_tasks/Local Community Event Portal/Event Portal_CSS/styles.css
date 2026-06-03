@@ -49,14 +49,18 @@ body {
    Event Card Styling (RGBA)
 ========================= */
 
+/* =========================
+   Box Model Example
+========================= */
+
 .eventCard {
     background-color: rgba(255, 255, 255, 0.8);
 
-    border: 2px solid #666666;
+    border: 3px solid #003366;
 
-    padding: 20px;
+    padding: 25px;
 
-    margin: 20px;
+    margin: 25px;
 
     border-radius: 10px;
 }
@@ -396,4 +400,26 @@ li {
     padding: 5px;
 
     margin: 5px;
+}
+
+/* =========================
+   Form Field Outline
+========================= */
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 3px solid orange;
+}
+
+/* =========================
+   Visibility Example
+========================= */
+
+.hiddenExample {
+    visibility: hidden;
+}
+
+.noneExample {
+    display: none;
 }
