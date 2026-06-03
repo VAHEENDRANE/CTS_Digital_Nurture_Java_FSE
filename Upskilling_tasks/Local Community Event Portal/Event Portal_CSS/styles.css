@@ -1,4 +1,7 @@
-/* Header Styles */
+/* =========================
+   Header Styles
+========================= */
+
 #welcomeBanner {
     background-color: blue;
     color: white;
@@ -6,12 +9,20 @@
     text-align: center;
 }
 
-/* Highlight Styles */
+
+/* =========================
+   Highlight Styles
+========================= */
+
 .highlight {
     background-color: yellow;
 }
 
-/* Image Styles */
+
+/* =========================
+   Image Styles
+========================= */
+
 .image-border {
     border: 3px solid black;
     width: 200px;
@@ -19,7 +30,11 @@
     cursor: pointer;
 }
 
-/* Table Styles */
+
+/* =========================
+   Table Styles
+========================= */
+
 table {
     margin: auto;
 }
@@ -29,7 +44,11 @@ td {
     text-align: center;
 }
 
-/* Form Styles */
+
+/* =========================
+   Form Styles
+========================= */
+
 form {
     width: 500px;
     margin: 20px auto;
@@ -37,6 +56,9 @@ form {
     border: 2px solid black;
     border-radius: 10px;
 }
+
+
+/* Style for Form Inputs */
 
 input,
 select,
@@ -48,12 +70,18 @@ textarea {
     box-sizing: border-box;
 }
 
-/* Button Styles */
+
+/* Style for Main CTA Button */
+
 button {
+    background-color: #007BFF;
+    color: white;
     padding: 10px 20px;
 }
 
-/* Output Styles */
+
+/* Output Message Styles */
+
 output {
     display: block;
     margin-top: 10px;
@@ -61,23 +89,31 @@ output {
     color: green;
 }
 
-/* Fee Styles */
+
+/* Event Fee Display */
+
 #fee {
     color: blue;
     font-weight: bold;
 }
 
-/* Character Count Styles */
+
+/* Character Counter */
+
 #charCount {
     color: green;
 }
 
-/* Phone Message Styles */
+
+/* Phone Validation Message */
+
 #phoneMessage {
     color: red;
 }
 
-/* Video Status Styles */
+
+/* Video Status Message */
+
 #videoStatus {
     color: green;
     font-weight: bold;
