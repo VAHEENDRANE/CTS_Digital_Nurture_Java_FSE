@@ -25,13 +25,40 @@
         }
 
         table {
-            margin: 20px auto;
-            border-collapse: collapse;
+            margin: auto;
         }
 
         td {
             padding: 10px;
             text-align: center;
+        }
+
+        form {
+            width: 500px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 2px solid black;
+            border-radius: 10px;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+        }
+
+        button {
+            padding: 10px 20px;
+        }
+
+        output {
+            display: block;
+            margin-top: 15px;
+            color: green;
+            font-weight: bold;
         }
     </style>
 </head>
@@ -57,16 +84,19 @@
 
         <section id="home">
             <h1 class="highlight">Home</h1>
+
             <p>
                 Welcome to our portal.
-                <span style="color:red; font-weight:bold;">
+                <span style="color:red;font-weight:bold;">
                     Special Offer: Free Registration Today!
                 </span>
             </p>
         </section>
 
         <section id="events">
+
             <h1>Events</h1>
+
             <p class="highlight">
                 Explore exciting community events.
             </p>
@@ -102,7 +132,7 @@
                     </td>
 
                     <td>
-                        <img src="images/eventt5.jpg" alt="Book Fair"
+                        <img src="images/event5.jpg" alt="Book Fair"
                             title="Book Fair" class="image-border">
                         <p>Book Fair</p>
                     </td>
@@ -114,6 +144,50 @@
                     </td>
                 </tr>
             </table>
+
+            <h2>Event Registration Form</h2>
+
+            <form onsubmit="showMessage(); return false;">
+
+                <label>Name</label>
+                <input type="text"
+                       id="name"
+                       placeholder="Enter your name"
+                       required
+                       autofocus>
+
+                <label>Email</label>
+                <input type="email"
+                       id="email"
+                       placeholder="Enter your email"
+                       required>
+
+                <label>Event Date</label>
+                <input type="date"
+                       id="date"
+                       required>
+
+                <label>Event Type</label>
+                <select id="eventType" required>
+                    <option value="">Select Event</option>
+                    <option>Music Festival</option>
+                    <option>Food Carnival</option>
+                    <option>Sports Meet</option>
+                </select>
+
+                <label>Message</label>
+                <textarea id="message"
+                          rows="4"
+                          placeholder="Enter your message"
+                          required></textarea>
+
+                <button type="submit">
+                    Register
+                </button>
+
+                <output id="result"></output>
+
+            </form>
 
         </section>
 
@@ -129,6 +203,13 @@
     <footer>
         <p>&copy; 2026 Local Community Event Portal</p>
     </footer>
+
+    <script>
+        function showMessage() {
+            document.getElementById("result").value =
+                "Registration Successful!";
+        }
+    </script>
 
 </body>
 
