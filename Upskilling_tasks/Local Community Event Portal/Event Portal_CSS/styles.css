@@ -10,38 +10,209 @@
 
 
 /* =========================
-   Element Selector
+   Body Background Styling
 ========================= */
 
-h2 {
-    color: darkblue;
-    text-align: center;
-    margin: 15px 0;
+body {
+    background-color: #e6f2ff; /* Fallback Color */
+
+    background-image: url("images/city.jpg");
+
+    background-repeat: no-repeat;
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-attachment: fixed;
 }
 
 
 /* =========================
-   ID Selector
+   Banner Styling (HEX Colors)
 ========================= */
 
 #mainHeader {
-    background-color: navy;
-    color: white;
+    background-color: #003366;
+
+    color: #FFFFFF;
+
     text-align: center;
+
     padding: 20px;
+
     font-size: 28px;
 }
 
 
 /* =========================
-   Class Selector
+   Event Card Styling (RGBA)
 ========================= */
 
 .eventCard {
-    border: 2px solid gray;
+    background-color: rgba(255, 255, 255, 0.8);
+
+    border: 2px solid #666666;
+
     padding: 20px;
+
     margin: 20px;
+
     border-radius: 10px;
+}
+
+
+/* =========================
+   Gradient Section Headers
+========================= */
+
+h2 {
+    background: linear-gradient(
+        to right,
+        #003366,
+        #00AEEF
+    );
+
+    color: white;
+
+    padding: 10px;
+
+    text-align: center;
+
+    border-radius: 5px;
+
+    margin-bottom: 15px;
+}
+
+
+/* =========================
+   Highlight Styles
+========================= */
+
+.highlight {
+    background-color: yellow;
+}
+
+
+/* =========================
+   Image Styles
+========================= */
+
+.image-border {
+    border: 3px solid black;
+    width: 200px;
+    height: 150px;
+    cursor: pointer;
+}
+
+
+/* =========================
+   Table Styles
+========================= */
+
+table {
+    margin: auto;
+}
+
+td {
+    padding: 10px;
+    text-align: center;
+}
+
+
+/* =========================
+   Form Styles
+========================= */
+
+form {
+    width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+
+/* =========================
+   Input Styles
+========================= */
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   Button Styles
+========================= */
+
+button {
+    background-color: #007BFF;
+
+    color: white;
+
+    padding: 10px 20px;
+}
+
+
+/* =========================
+   Output Styles
+========================= */
+
+output {
+    display: block;
+
+    margin-top: 10px;
+
+    font-weight: bold;
+
+    color: green;
+}
+
+
+/* =========================
+   Fee Styles
+========================= */
+
+#fee {
+    color: blue;
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   Character Count Styles
+========================= */
+
+#charCount {
+    color: green;
+}
+
+
+/* =========================
+   Phone Message Styles
+========================= */
+
+#phoneMessage {
+    color: red;
+}
+
+
+/* =========================
+   Video Status Styles
+========================= */
+
+#videoStatus {
+    color: green;
+
+    font-weight: bold;
 }
 
 
@@ -51,6 +222,5 @@ h2 {
 
 h3,
 p {
-    color: darkgreen;
-    font-family: Arial, sans-serif;
+    color: #003366;
 }
