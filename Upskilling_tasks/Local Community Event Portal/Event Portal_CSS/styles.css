@@ -1,0 +1,84 @@
+/* Header Styles */
+#welcomeBanner {
+    background-color: blue;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+/* Highlight Styles */
+.highlight {
+    background-color: yellow;
+}
+
+/* Image Styles */
+.image-border {
+    border: 3px solid black;
+    width: 200px;
+    height: 150px;
+    cursor: pointer;
+}
+
+/* Table Styles */
+table {
+    margin: auto;
+}
+
+td {
+    padding: 10px;
+    text-align: center;
+}
+
+/* Form Styles */
+form {
+    width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+/* Button Styles */
+button {
+    padding: 10px 20px;
+}
+
+/* Output Styles */
+output {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: green;
+}
+
+/* Fee Styles */
+#fee {
+    color: blue;
+    font-weight: bold;
+}
+
+/* Character Count Styles */
+#charCount {
+    color: green;
+}
+
+/* Phone Message Styles */
+#phoneMessage {
+    color: red;
+}
+
+/* Video Status Styles */
+#videoStatus {
+    color: green;
+    font-weight: bold;
+}
