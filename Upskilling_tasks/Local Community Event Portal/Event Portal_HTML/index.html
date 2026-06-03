@@ -274,7 +274,13 @@
     </footer>
 
     <script>
+console.log("Community Portal Loaded");
 
+let portalName = "Local Community Event Portal";
+let totalEvents = 6;
+
+console.log("Portal Name:", portalName);
+console.log("Total Events:", totalEvents);
         window.onload = function () {
 
     let savedEvent =
@@ -313,6 +319,8 @@ function showFee() {
     let fee =
         document.getElementById("eventType").value;
 
+        console.log("Selected Fee:", fee);
+
     document.getElementById("fee").innerHTML =
         "Event Fee: ₹" + fee;
 
@@ -322,12 +330,13 @@ function showFee() {
     );
 }
 
-        function showConfirmation() {
+      function showConfirmation() {
 
-            document.getElementById("result").value =
-                "Registration / Feedback Submitted Successfully!";
-        }
+    console.log("Submit Button Clicked");
 
+    document.getElementById("result").value =
+        "Registration / Feedback Submitted Successfully!";
+}
         function enlargeImage(image) {
 
             image.style.width = "300px";
