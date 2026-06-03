@@ -5,6 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Local Community Event Portal</title>
+
+    <style>
+        #welcomeBanner {
+            background-color: blue;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .highlight {
+            background-color: yellow;
+            font-weight: bold;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -18,18 +33,25 @@
         <a href="help.html" target="_blank">Help</a>
     </nav>
 
+    <div id="welcomeBanner">
+        Welcome Back User!
+        <span style="color:red; font-weight:bold;">
+            Special Offer: Register Today!
+        </span>
+    </div>
+
     <!-- Main Section -->
 
     <main>
 
         <section id="home">
-            <h1>Home</h1>
+            <h1 class="highlight">Home</h1>
             <p>Welcome to the Local Community Event Portal.</p>
         </section>
 
         <section id="events">
             <h1>Events</h1>
-            <p>View upcoming community events.</p>
+            <p class="highlight">Check out upcoming community events.</p>
         </section>
 
         <section id="contact">
