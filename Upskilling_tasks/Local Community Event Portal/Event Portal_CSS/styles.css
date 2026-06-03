@@ -1,21 +1,47 @@
-/* Header Styles */
+/* =======================================
+   Header Styles
+======================================= */
 
 header {
     text-align: center;
     padding: 20px;
 }
 
-/* Main Content Styles */
+/* =======================================
+   Main Content Styles
+======================================= */
 
 main {
     text-align: center;
+    margin-top: 20px;
 }
 
-/* Button Styles */
+/* =======================================
+   Paragraph Styles
+======================================= */
+
+p {
+    font-size: 18px;
+    color: black;
+}
+
+/* =======================================
+   Style for Main CTA Button
+======================================= */
 
 .cta-button {
-    background-color: blue;
+    background-color: #007BFF;
     color: white;
-    padding: 10px;
+    padding: 12px 20px;
     border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* =======================================
+   Button Hover Effect
+======================================= */
+
+.cta-button:hover {
+    background-color: #0056b3;
 }
