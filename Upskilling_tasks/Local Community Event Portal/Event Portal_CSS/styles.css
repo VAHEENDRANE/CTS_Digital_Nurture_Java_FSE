@@ -294,3 +294,67 @@ label {
 
     font-weight: bold;
 }
+
+/* =========================
+   Link Styling
+========================= */
+
+a:link {
+    color: blue;
+    text-decoration: none;
+}
+
+a:visited {
+    color: purple;
+}
+
+a:hover {
+    color: red;
+    text-decoration: underline;
+}
+
+a:active {
+    color: orange;
+}
+
+
+/* =========================
+   List Styling
+========================= */
+
+ul {
+    list-style-type: square;
+
+    list-style-position: inside;
+}
+
+
+/* Remove Bullets from Navigation */
+
+nav ul {
+    list-style-type: none;
+
+    margin: 0;
+
+    padding: 0;
+}
+
+
+/* Navigation Menu Items */
+
+nav li {
+    display: inline-block;
+
+    padding: 10px;
+
+    margin: 5px;
+}
+
+
+/* General List Item Styling */
+
+li {
+    padding: 5px;
+
+    margin: 5px;
+}
