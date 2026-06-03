@@ -214,6 +214,10 @@
 
                 <p id="fee"></p>
 
+                <button type="button" onclick="clearPreferences()">
+    Clear Preferences
+</button>
+
                 <label>Message / Feedback</label>
                 <textarea id="feedback"
                           rows="4"
@@ -263,6 +267,26 @@
 
     <script>
 
+        window.onload = function () {
+
+    let savedEvent =
+        localStorage.getItem("preferredEvent");
+
+    if (savedEvent) {
+
+        document.getElementById("eventType").value =
+            savedEvent;
+
+        document.getElementById("fee").innerHTML =
+            "Event Fee: ₹" + savedEvent;
+    }
+
+    sessionStorage.setItem(
+        "portalUser",
+        "Community Portal Visitor"
+    );
+};
+
         function validatePhone() {
 
             let phone = document.getElementById("phone").value;
@@ -276,15 +300,19 @@
                     "Phone Number must contain 10 digits";
             }
         }
+function showFee() {
 
-        function showFee() {
+    let fee =
+        document.getElementById("eventType").value;
 
-            let fee =
-                document.getElementById("eventType").value;
+    document.getElementById("fee").innerHTML =
+        "Event Fee: ₹" + fee;
 
-            document.getElementById("fee").innerHTML =
-                "Event Fee: ₹" + fee;
-        }
+    localStorage.setItem(
+        "preferredEvent",
+        fee
+    );
+}
 
         function showConfirmation() {
 
@@ -314,6 +342,14 @@
         }
 
         window.onbeforeunload = function () {
+
+            function clearPreferences() {
+
+    localStorage.clear();
+    sessionStorage.clear();
+
+    alert("Preferences Cleared");
+}
 
             let feedback =
                 document.getElementById("feedback").value;
