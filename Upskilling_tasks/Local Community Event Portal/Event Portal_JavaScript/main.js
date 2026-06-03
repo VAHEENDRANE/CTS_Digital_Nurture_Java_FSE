@@ -110,3 +110,132 @@ catch(error) {
         "Registration Error: " + error.message
     );
 }
+
+// ======================================
+// Functions
+// ======================================
+
+function addEvent(name, category) {
+
+    console.log(
+        `Event Added: ${name} (${category})`
+    );
+}
+
+function registerUser(userName, eventName) {
+
+    console.log(
+        `${userName} registered for ${eventName}`
+    );
+}
+
+function filterEventsByCategory(category, callback) {
+
+    const filteredEvents = eventList.filter(
+        event => event.category === category
+    );
+
+    callback(filteredEvents);
+}
+
+
+// ======================================
+// Event Data
+// ======================================
+
+const eventList = [
+
+    {
+        name: "Music Festival",
+        category: "Music"
+    },
+
+    {
+        name: "Food Carnival",
+        category: "Food"
+    },
+
+    {
+        name: "Sports Meet",
+        category: "Sports"
+    },
+
+    {
+        name: "Workshop on Baking",
+        category: "Food"
+    }
+
+];
+
+
+// ======================================
+// Closure Example
+// ======================================
+
+function registrationTracker(category) {
+
+    let totalRegistrations = 0;
+
+    return function () {
+
+        totalRegistrations++;
+
+        console.log(
+            `${category} Registrations: ${totalRegistrations}`
+        );
+    };
+}
+
+
+// ======================================
+// Closure Calls
+// ======================================
+
+const musicRegistration =
+    registrationTracker("Music");
+
+musicRegistration();
+
+musicRegistration();
+
+musicRegistration();
+
+
+// ======================================
+// Callback Example
+// ======================================
+
+filterEventsByCategory(
+
+    "Music",
+
+    function (events) {
+
+        console.log(
+            "Filtered Events:"
+        );
+
+        events.forEach(function (event) {
+
+            console.log(
+                event.name
+            );
+
+        });
+    }
+);
+
+
+// ======================================
+// Function Calls
+// ======================================
+
+addEvent(
+    "Workshop on Baking",
+    "Food"
+);
+
+registerUser(
+    "Vahee",
+    "Music Festival"
+);
