@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "name": "Acoustic Music Festival",
+    "date": "2026-07-15",
+    "category": "Music",
+    "capacity": 150
+  },
+  {
+    "id": 2,
+    "name": "Artisan Bread Baking Workshop",
+    "date": "2026-06-25",
+    "category": "Baking",
+    "capacity": 12
+  },
+  {
+    "id": 3,
+    "name": "Vinyasa Yoga Summer Camp",
+    "date": "2026-08-10",
+    "category": "Wellness",
+    "capacity": 30
+  },
+  {
+    "id": 4,
+    "name": "JS Coding Intensive Bootcamp",
+    "date": "2026-08-01",
+    "category": "Tech",
+    "capacity": 50
+  }
+]

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 08 - Event Handling</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 15px;
+            background-color: white;
+            color: #111;
+        }
+        input, select, button {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            padding: 4px 6px;
+        }
+        button {
+            cursor: pointer;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        table th, table td {
+            border: 1px solid #ccc;
+            padding: 6px 10px;
+            text-align: left;
+        }
+        table th {
+            background-color: #eeeeee;
+        }
+    </style>
+    
+    <script>
+        (function() {
+            var originalLog = console.log;
+            console.log = function() {
+                originalLog.apply(console, arguments);
+                var terminal = document.getElementById('terminal-logs');
+                var msg = Array.prototype.slice.call(arguments).map(function(arg) {
+                    return typeof arg === 'object' ? JSON.stringify(arg) : arg;
+                }).join(' ');
+                if (terminal) {
+                    var line = document.createElement('div');
+                    line.textContent = '> ' + msg;
+                    terminal.appendChild(line);
+                    terminal.scrollTop = terminal.scrollHeight;
+                }
+            };
+        })();
+    </script>
+</head>
+<body>
+
+    <h1>Local Community Event Portal</h1>
+    <p><strong>Exercise 08 - Event Handling</strong></p>
+    <hr>
+
+    <h2>Filter Events (onchange event)</h2>
+    <p>
+        Filter by category:
+        <select id="event-cat-select" onchange="handleCategoryChange()">
+            <option value="All">All Categories</option>
+            <option value="Music">Music</option>
+            <option value="Baking">Baking</option>
+            <option value="Wellness">Wellness</option>
+            <option value="Tech">Tech</option>
+        </select>
+    </p>
+
+    <h2>Click an Event Card (onclick event)</h2>
+    <div id="clickable-events-grid"></div>
+
+    <hr>
+
+    <h2>Keyboard Input Demo (onkeydown event)</h2>
+    <p>Type in the box below and watch the console:</p>
+    <input type="text" id="interactive-key-input" placeholder="Type here...">
+
+    <hr>
+    
+    <h3>Console Output:</h3>
+    <div id="terminal-logs" style="background-color: black; color: lime; font-family: monospace; font-size: 13px; padding: 10px; height: 120px; overflow-y: auto; border: 1px solid #333;"></div>
+
+
+    <hr>
+    <p>
+        <a href="../07_DOM_Manipulation/index.html">← Previous: DOM Manipulation</a>
+        &nbsp;&nbsp;
+        <a href="../09_Async_Promises_AsyncAwait/index.html">Next: Async &amp; Promises →</a>
+    </p>
+
+    <div id="detail-overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); justify-content: center; align-items: center;">
+        <div style="background: white; border: 1px solid #ccc; padding: 20px; min-width: 280px;">
+            <h3>Event Details</h3>
+            <p><strong>Name:</strong> <span id="modal-event-name"></span></p>
+            <p><strong>Date:</strong> <span id="modal-event-date"></span></p>
+            <p><strong>Category:</strong> <span id="modal-event-cat"></span></p>
+            <br>
+            <button onclick="closeEventModal()">Close</button>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+
+</body>
+</html>

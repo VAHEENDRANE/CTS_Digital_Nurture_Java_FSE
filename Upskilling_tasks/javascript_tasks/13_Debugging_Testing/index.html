@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 13 - Debugging &amp; Testing</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 15px;
+            background-color: white;
+            color: #111;
+        }
+        input, select, button {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            padding: 4px 6px;
+        }
+        button {
+            cursor: pointer;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        table th, table td {
+            border: 1px solid #ccc;
+            padding: 6px 10px;
+            text-align: left;
+        }
+        table th {
+            background-color: #eeeeee;
+        }
+    </style>
+    
+    <script>
+        (function() {
+            var originalLog = console.log;
+            console.log = function() {
+                originalLog.apply(console, arguments);
+                var terminal = document.getElementById('terminal-logs');
+                var msg = Array.prototype.slice.call(arguments).map(function(arg) {
+                    return typeof arg === 'object' ? JSON.stringify(arg) : arg;
+                }).join(' ');
+                if (terminal) {
+                    var line = document.createElement('div');
+                    line.textContent = '> ' + msg;
+                    terminal.appendChild(line);
+                    terminal.scrollTop = terminal.scrollHeight;
+                }
+            };
+        })();
+    </script>
+</head>
+<body>
+
+    <h1>Local Community Event Portal</h1>
+    <p><strong>Exercise 13 - Debugging &amp; Testing</strong></p>
+    <hr>
+
+    <h2>Console Log Types</h2>
+    <p>Click the buttons and check the browser DevTools Console (F12):</p>
+    <p>
+        <button onclick="triggerNormalLog()">console.log()</button>
+        &nbsp;
+        <button onclick="triggerWarningLog()">console.warn()</button>
+        &nbsp;
+        <button onclick="triggerErrorLog()">console.error()</button>
+        &nbsp;
+        <button onclick="triggerRuntimeException()">Throw Error</button>
+    </p>
+
+    <hr>
+
+    <h2>Breakpoint Math Demo</h2>
+    <p>
+        Tickets to book: <input type="number" id="tickets-input" value="5" min="1" max="20">
+        &nbsp;
+        <button onclick="triggerBreakpointMath(Number(document.getElementById('tickets-input').value))">Calculate</button>
+    </p>
+    <p id="math-display">Result will show here.</p>
+
+    <hr>
+    
+    <h3>Console Output:</h3>
+    <div id="terminal-logs" style="background-color: black; color: lime; font-family: monospace; font-size: 13px; padding: 10px; height: 120px; overflow-y: auto; border: 1px solid #333;"></div>
+
+
+    <hr>
+    <p>
+        <a href="../12_AJAX_Fetch_API/index.html">← Previous: AJAX &amp; Fetch API</a>
+        &nbsp;&nbsp;
+        <a href="../14_jQuery_Frameworks/index.html">Next: jQuery &amp; Frameworks →</a>
+    </p>
+
+    <script src="main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 11 - Working With Forms</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 15px;
+            background-color: white;
+            color: #111;
+        }
+        input, select, button {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            padding: 4px 6px;
+        }
+        button {
+            cursor: pointer;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        table th, table td {
+            border: 1px solid #ccc;
+            padding: 6px 10px;
+            text-align: left;
+        }
+        table th {
+            background-color: #eeeeee;
+        }
+    </style>
+    
+    <script>
+        (function() {
+            var originalLog = console.log;
+            console.log = function() {
+                originalLog.apply(console, arguments);
+                var terminal = document.getElementById('terminal-logs');
+                var msg = Array.prototype.slice.call(arguments).map(function(arg) {
+                    return typeof arg === 'object' ? JSON.stringify(arg) : arg;
+                }).join(' ');
+                if (terminal) {
+                    var line = document.createElement('div');
+                    line.textContent = '> ' + msg;
+                    terminal.appendChild(line);
+                    terminal.scrollTop = terminal.scrollHeight;
+                }
+            };
+        })();
+    </script>
+</head>
+<body>
+
+    <h1>Local Community Event Portal</h1>
+    <p><strong>Exercise 11 - Working With Forms</strong></p>
+    <hr>
+
+    <h2>Event Registration Form</h2>
+
+    <div id="success-banner" style="display: none; background: #d4edda; border: 1px solid #c3e6cb; color: #155724; padding: 10px; margin-bottom: 10px;"></div>
+
+    <form id="registration-form">
+        <p>
+            Full Name: <input type="text" name="fullName" class="input-field" placeholder="Your full name"><br>
+            <span id="error-name" style="display: none; color: red; font-size: 13px;"></span>
+        </p>
+
+        <p>
+            Email: <input type="email" name="email" class="input-field" placeholder="user@example.com"><br>
+            <span id="error-email" style="display: none; color: red; font-size: 13px;"></span>
+        </p>
+
+        <p>
+            Number of Tickets (1-10): <input type="number" name="tickets" class="input-field" value="1" min="1" max="10"><br>
+            <span id="error-tickets" style="display: none; color: red; font-size: 13px;"></span>
+        </p>
+
+        <p>
+            Select Event:
+            <select name="eventSelected" class="input-field">
+                <option>Music Festival</option>
+                <option>Baking Workshop</option>
+                <option>Yoga Camp</option>
+                <option>Coding Bootcamp</option>
+            </select>
+        </p>
+
+        <p>
+            <input type="checkbox" name="terms">
+            I agree to the terms and conditions<br>
+            <span id="error-terms" style="display: none; color: red; font-size: 13px;">Please accept the terms.</span>
+        </p>
+
+        <p><button type="submit">Register</button></p>
+    </form>
+
+    <hr>
+    
+    <h3>Console Output:</h3>
+    <div id="terminal-logs" style="background-color: black; color: lime; font-family: monospace; font-size: 13px; padding: 10px; height: 120px; overflow-y: auto; border: 1px solid #333;"></div>
+
+
+    <hr>
+    <p>
+        <a href="../10_Modern_JavaScript/index.html">← Previous: Modern JavaScript</a>
+        &nbsp;&nbsp;
+        <a href="../12_AJAX_Fetch_API/index.html">Next: AJAX &amp; Fetch API →</a>
+    </p>
+
+    <script src="main.js"></script>
+
+</body>
+</html>

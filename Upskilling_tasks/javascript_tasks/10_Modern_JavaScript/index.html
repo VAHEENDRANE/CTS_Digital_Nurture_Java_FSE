@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 10 - Modern JavaScript (ES6+)</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 15px;
+            background-color: white;
+            color: #111;
+        }
+        input, select, button {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            padding: 4px 6px;
+        }
+        button {
+            cursor: pointer;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        table th, table td {
+            border: 1px solid #ccc;
+            padding: 6px 10px;
+            text-align: left;
+        }
+        table th {
+            background-color: #eeeeee;
+        }
+    </style>
+    
+    <script>
+        (function() {
+            var originalLog = console.log;
+            console.log = function() {
+                originalLog.apply(console, arguments);
+                var terminal = document.getElementById('terminal-logs');
+                var msg = Array.prototype.slice.call(arguments).map(function(arg) {
+                    return typeof arg === 'object' ? JSON.stringify(arg) : arg;
+                }).join(' ');
+                if (terminal) {
+                    var line = document.createElement('div');
+                    line.textContent = '> ' + msg;
+                    terminal.appendChild(line);
+                    terminal.scrollTop = terminal.scrollHeight;
+                }
+            };
+        })();
+    </script>
+</head>
+<body>
+
+    <h1>Local Community Event Portal</h1>
+    <p><strong>Exercise 10 - Modern JavaScript (ES6+)</strong></p>
+    <hr>
+
+    <h2>Default Parameters</h2>
+    <p>
+        Event Name: <input type="text" id="def-name" placeholder="e.g. Jazz Night"><br><br>
+        Category (optional): <input type="text" id="def-cat" placeholder="leave blank for default"><br><br>
+        Capacity (optional): <input type="number" id="def-cap" placeholder="leave blank for default"><br><br>
+        <button onclick="runDefaultParametersDemo()">Run buildEventConfig()</button>
+    </p>
+    <p id="def-output" style="background: #f5f5f5; border: 1px solid #ccc; padding: 8px;"></p>
+
+    <hr>
+
+    <h2>Destructuring</h2>
+    <p><button onclick="runDestructuringDemo()">Run Destructuring Demo</button></p>
+    <p id="destructure-output" style="background: #f5f5f5; border: 1px solid #ccc; padding: 8px;"></p>
+
+    <hr>
+
+    <h2>Spread Operator</h2>
+    <p><button onclick="runSpreadDemo()">Run Spread Demo</button></p>
+    <p id="spread-output" style="background: #f5f5f5; border: 1px solid #ccc; padding: 8px;"></p>
+
+    <hr>
+    
+    <h3>Console Output:</h3>
+    <div id="terminal-logs" style="background-color: black; color: lime; font-family: monospace; font-size: 13px; padding: 10px; height: 120px; overflow-y: auto; border: 1px solid #333;"></div>
+
+
+    <hr>
+    <p>
+        <a href="../09_Async_Promises_AsyncAwait/index.html">← Previous: Async &amp; Promises</a>
+        &nbsp;&nbsp;
+        <a href="../11_Working_With_Forms/index.html">Next: Working With Forms →</a>
+    </p>
+
+    <script src="main.js"></script>
+
+</body>
+</html>
