@@ -49,6 +49,7 @@
             padding: 8px;
             margin-top: 5px;
             margin-bottom: 15px;
+            box-sizing: border-box;
         }
 
         button {
@@ -59,6 +60,7 @@
             display: block;
             margin-top: 10px;
             font-weight: bold;
+            color: green;
         }
 
         #fee {
@@ -68,6 +70,15 @@
 
         #charCount {
             color: green;
+        }
+
+        #phoneMessage {
+            color: red;
+        }
+
+        #videoStatus {
+            color: green;
+            font-weight: bold;
         }
     </style>
 </head>
@@ -96,7 +107,7 @@
 
             <p>
                 Welcome to our portal.
-                <span style="color:red;font-weight:bold;">
+                <span style="color:red; font-weight:bold;">
                     Special Offer: Free Registration Today!
                 </span>
             </p>
@@ -105,6 +116,12 @@
         <section id="events">
 
             <h1>Events</h1>
+
+            <p class="highlight">
+                Explore exciting community events.
+            </p>
+
+            <h2>Community Event Gallery</h2>
 
             <table>
                 <tr>
@@ -144,7 +161,7 @@
                     </td>
 
                     <td>
-                        <img src="images/event5.jpg"
+                        <img src="images/eventt5.jpg"
                              alt="Book Fair"
                              title="Book Fair"
                              class="image-border">
@@ -161,7 +178,7 @@
                 </tr>
             </table>
 
-            <h2>Event Feedback Form</h2>
+            <h2>Event Registration & Feedback Form</h2>
 
             <form>
 
@@ -171,6 +188,11 @@
                        required
                        autofocus>
 
+                <label>Email</label>
+                <input type="email"
+                       placeholder="Enter your email"
+                       required>
+
                 <label>Phone Number</label>
                 <input type="text"
                        id="phone"
@@ -179,8 +201,11 @@
 
                 <p id="phoneMessage"></p>
 
+                <label>Event Date</label>
+                <input type="date" required>
+
                 <label>Select Event</label>
-                <select id="eventType" onchange="showFee()">
+                <select id="eventType" required onchange="showFee()">
                     <option value="">Select Event</option>
                     <option value="100">Music Festival</option>
                     <option value="200">Food Carnival</option>
@@ -189,21 +214,37 @@
 
                 <p id="fee"></p>
 
-                <label>Feedback</label>
+                <label>Message / Feedback</label>
                 <textarea id="feedback"
                           rows="4"
-                          placeholder="Enter feedback"
+                          placeholder="Enter your feedback"
+                          required
                           onkeyup="countCharacters()"></textarea>
 
                 <p id="charCount">Characters: 0</p>
 
                 <button type="button" onclick="showConfirmation()">
-                    Submit Feedback
+                    Submit
                 </button>
 
                 <output id="result"></output>
 
             </form>
+
+            <h2>Event Promo Video</h2>
+
+            <video id="promoVideo"
+                   width="500"
+                   controls
+                   oncanplay="videoReady()">
+
+                <source src="videos/promo.mp4" type="video/mp4">
+
+                Your browser does not support the video tag.
+
+            </video>
+
+            <p id="videoStatus"></p>
 
         </section>
 
@@ -229,7 +270,8 @@
             if (phone.length === 10) {
                 document.getElementById("phoneMessage").innerHTML =
                     "Valid Phone Number";
-            } else {
+            }
+            else {
                 document.getElementById("phoneMessage").innerHTML =
                     "Phone Number must contain 10 digits";
             }
@@ -237,7 +279,8 @@
 
         function showFee() {
 
-            let fee = document.getElementById("eventType").value;
+            let fee =
+                document.getElementById("eventType").value;
 
             document.getElementById("fee").innerHTML =
                 "Event Fee: ₹" + fee;
@@ -246,7 +289,7 @@
         function showConfirmation() {
 
             document.getElementById("result").value =
-                "Feedback Submitted Successfully!";
+                "Registration / Feedback Submitted Successfully!";
         }
 
         function enlargeImage(image) {
@@ -263,6 +306,22 @@
             document.getElementById("charCount").innerHTML =
                 "Characters: " + count;
         }
+
+        function videoReady() {
+
+            document.getElementById("videoStatus").innerHTML =
+                "Video ready to play";
+        }
+
+        window.onbeforeunload = function () {
+
+            let feedback =
+                document.getElementById("feedback").value;
+
+            if (feedback.length > 0) {
+                return "You have unsaved changes. Are you sure you want to leave?";
+            }
+        };
 
     </script>
 
