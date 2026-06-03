@@ -22,6 +22,7 @@
             border: 3px solid black;
             width: 200px;
             height: 150px;
+            cursor: pointer;
         }
 
         table {
@@ -56,9 +57,17 @@
 
         output {
             display: block;
-            margin-top: 15px;
-            color: green;
+            margin-top: 10px;
             font-weight: bold;
+        }
+
+        #fee {
+            color: blue;
+            font-weight: bold;
+        }
+
+        #charCount {
+            color: green;
         }
     </style>
 </head>
@@ -97,92 +106,99 @@
 
             <h1>Events</h1>
 
-            <p class="highlight">
-                Explore exciting community events.
-            </p>
-
-            <h2>Community Event Gallery</h2>
-
             <table>
                 <tr>
                     <td>
-                        <img src="images/event1.jpg" alt="Music Festival"
-                            title="Music Festival" class="image-border">
+                        <img src="images/event1.jpg"
+                             alt="Music Festival"
+                             title="Music Festival"
+                             class="image-border"
+                             ondblclick="enlargeImage(this)">
                         <p>Music Festival</p>
                     </td>
 
                     <td>
-                        <img src="images/event2.jpg" alt="Food Carnival"
-                            title="Food Carnival" class="image-border">
+                        <img src="images/event2.jpg"
+                             alt="Food Carnival"
+                             title="Food Carnival"
+                             class="image-border">
                         <p>Food Carnival</p>
                     </td>
 
                     <td>
-                        <img src="images/event3.jpg" alt="Sports Meet"
-                            title="Sports Meet" class="image-border">
+                        <img src="images/event3.jpg"
+                             alt="Sports Meet"
+                             title="Sports Meet"
+                             class="image-border">
                         <p>Sports Meet</p>
                     </td>
                 </tr>
 
                 <tr>
                     <td>
-                        <img src="images/event4.jpg" alt="Art Exhibition"
-                            title="Art Exhibition" class="image-border">
+                        <img src="images/event4.jpg"
+                             alt="Art Exhibition"
+                             title="Art Exhibition"
+                             class="image-border">
                         <p>Art Exhibition</p>
                     </td>
 
                     <td>
-                        <img src="images/event5.jpg" alt="Book Fair"
-                            title="Book Fair" class="image-border">
+                        <img src="images/event5.jpg"
+                             alt="Book Fair"
+                             title="Book Fair"
+                             class="image-border">
                         <p>Book Fair</p>
                     </td>
 
                     <td>
-                        <img src="images/event6.jpg" alt="Community Gathering"
-                            title="Community Gathering" class="image-border">
+                        <img src="images/event6.jpg"
+                             alt="Community Gathering"
+                             title="Community Gathering"
+                             class="image-border">
                         <p>Community Gathering</p>
                     </td>
                 </tr>
             </table>
 
-            <h2>Event Registration Form</h2>
+            <h2>Event Feedback Form</h2>
 
-            <form onsubmit="showMessage(); return false;">
+            <form>
 
                 <label>Name</label>
                 <input type="text"
-                       id="name"
                        placeholder="Enter your name"
                        required
                        autofocus>
 
-                <label>Email</label>
-                <input type="email"
-                       id="email"
-                       placeholder="Enter your email"
-                       required>
+                <label>Phone Number</label>
+                <input type="text"
+                       id="phone"
+                       placeholder="Enter 10 digit phone number"
+                       onblur="validatePhone()">
 
-                <label>Event Date</label>
-                <input type="date"
-                       id="date"
-                       required>
+                <p id="phoneMessage"></p>
 
-                <label>Event Type</label>
-                <select id="eventType" required>
+                <label>Select Event</label>
+                <select id="eventType" onchange="showFee()">
                     <option value="">Select Event</option>
-                    <option>Music Festival</option>
-                    <option>Food Carnival</option>
-                    <option>Sports Meet</option>
+                    <option value="100">Music Festival</option>
+                    <option value="200">Food Carnival</option>
+                    <option value="300">Sports Meet</option>
                 </select>
 
-                <label>Message</label>
-                <textarea id="message"
-                          rows="4"
-                          placeholder="Enter your message"
-                          required></textarea>
+                <p id="fee"></p>
 
-                <button type="submit">
-                    Register
+                <label>Feedback</label>
+                <textarea id="feedback"
+                          rows="4"
+                          placeholder="Enter feedback"
+                          onkeyup="countCharacters()"></textarea>
+
+                <p id="charCount">Characters: 0</p>
+
+                <button type="button" onclick="showConfirmation()">
+                    Submit Feedback
                 </button>
 
                 <output id="result"></output>
@@ -205,10 +221,49 @@
     </footer>
 
     <script>
-        function showMessage() {
-            document.getElementById("result").value =
-                "Registration Successful!";
+
+        function validatePhone() {
+
+            let phone = document.getElementById("phone").value;
+
+            if (phone.length === 10) {
+                document.getElementById("phoneMessage").innerHTML =
+                    "Valid Phone Number";
+            } else {
+                document.getElementById("phoneMessage").innerHTML =
+                    "Phone Number must contain 10 digits";
+            }
         }
+
+        function showFee() {
+
+            let fee = document.getElementById("eventType").value;
+
+            document.getElementById("fee").innerHTML =
+                "Event Fee: ₹" + fee;
+        }
+
+        function showConfirmation() {
+
+            document.getElementById("result").value =
+                "Feedback Submitted Successfully!";
+        }
+
+        function enlargeImage(image) {
+
+            image.style.width = "300px";
+            image.style.height = "250px";
+        }
+
+        function countCharacters() {
+
+            let count =
+                document.getElementById("feedback").value.length;
+
+            document.getElementById("charCount").innerHTML =
+                "Characters: " + count;
+        }
+
     </script>
 
 </body>
