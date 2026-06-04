@@ -310,3 +310,91 @@ Object.entries(event1).forEach(
     }
 
 );
+
+// ======================================
+// Arrays and Methods
+// ======================================
+
+let communityEvents = [
+
+    "Music Festival",
+
+    "Food Carnival",
+
+    "Sports Meet"
+];
+
+
+// ======================================
+// push()
+// ======================================
+
+communityEvents.push(
+    "Workshop on Baking"
+);
+
+console.log(
+    "After Push:"
+);
+
+console.log(
+    communityEvents
+);
+
+
+// ======================================
+// filter()
+// ======================================
+
+const musicEvents = [
+
+    {
+        name: "Music Festival",
+        category: "Music"
+    },
+
+    {
+        name: "Food Carnival",
+        category: "Food"
+    },
+
+    {
+        name: "Live Concert",
+        category: "Music"
+    }
+];
+
+const filteredMusicEvents =
+    musicEvents.filter(
+
+        event =>
+            event.category === "Music"
+    );
+
+console.log(
+    "Music Events:"
+);
+
+console.log(
+    filteredMusicEvents
+);
+
+
+// ======================================
+// map()
+// ======================================
+
+const displayCards =
+    communityEvents.map(
+
+        event =>
+            `Workshop on ${event}`
+    );
+
+console.log(
+    "Formatted Display Cards:"
+);
+
+console.log(
+    displayCards
+);
