@@ -239,3 +239,74 @@ registerUser(
     "Vahee",
     "Music Festival"
 );
+
+// ======================================
+// Event Constructor
+// ======================================
+
+function Event(name, category, seats) {
+
+    this.name = name;
+    this.category = category;
+    this.seats = seats;
+}
+
+
+// ======================================
+// Prototype Method
+// ======================================
+
+Event.prototype.checkAvailability = function () {
+
+    if (this.seats > 0) {
+
+        console.log(`${this.name} is Available`);
+
+    } else {
+
+        console.log(`${this.name} is Full`);
+    }
+};
+
+
+// ======================================
+// Create Event Objects
+// ======================================
+
+const event1 = new Event(
+    "Music Festival",
+    "Music",
+    50
+);
+
+const event2 = new Event(
+    "Food Carnival",
+    "Food",
+    0
+);
+
+
+// ======================================
+// Call Prototype Method
+// ======================================
+
+event1.checkAvailability();
+
+event2.checkAvailability();
+
+
+// ======================================
+// Object.entries()
+// ======================================
+
+console.log("Event Details:");
+
+Object.entries(event1).forEach(
+
+    ([key, value]) => {
+
+        console.log(`${key}: ${value}`);
+
+    }
+
+);
