@@ -843,3 +843,75 @@ function sendRegistration() {
 }
 
 sendRegistration();
+
+// ======================================
+// Debugging and Testing
+// ======================================
+
+function debugRegistration() {
+
+    console.log(
+        "Step 1: Registration Started"
+    );
+
+    let user = {
+
+        name: "Vahee",
+
+        email: "vahee@example.com",
+
+        event: "Music Festival"
+    };
+
+    console.log(
+        "Step 2: User Data"
+    );
+
+    console.log(user);
+
+    // BREAKPOINT LOCATION
+    debugger;
+
+    console.log(
+        "Step 3: Sending Data"
+    );
+
+    fetch(
+        "https://jsonplaceholder.typicode.com/posts",
+
+        {
+            method: "POST",
+
+            headers: {
+                "Content-Type":
+                    "application/json"
+            },
+
+            body: JSON.stringify(user)
+        }
+    )
+
+    .then(response =>
+        response.json()
+    )
+
+    .then(data => {
+
+        console.log(
+            "Step 4: Response Received"
+        );
+
+        console.log(data);
+    })
+
+    .catch(error => {
+
+        console.log(
+            "Step 5: Error"
+        );
+
+        console.log(error);
+    });
+}
+
+debugRegistration();
