@@ -767,3 +767,79 @@ registrationForm.addEventListener(
         }
     }
 );
+
+// ======================================
+// AJAX & Fetch API
+// ======================================
+
+function sendRegistration() {
+
+    const userData = {
+
+        name: "Vahee",
+
+        email: "vahee@example.com",
+
+        event: "Music Festival"
+    };
+
+    console.log(
+        "Sending Registration..."
+    );
+
+    // Simulate Delay
+
+    setTimeout(
+
+        function () {
+
+            fetch(
+
+                "https://jsonplaceholder.typicode.com/posts",
+
+                {
+                    method: "POST",
+
+                    headers: {
+
+                        "Content-Type":
+                            "application/json"
+                    },
+
+                    body: JSON.stringify(
+                        userData
+                    )
+                }
+
+            )
+
+            .then(response =>
+                response.json()
+            )
+
+            .then(data => {
+
+                console.log(
+                    "Registration Successful"
+                );
+
+                console.log(data);
+            })
+
+            .catch(error => {
+
+                console.log(
+                    "Registration Failed"
+                );
+
+                console.log(error);
+            });
+
+        },
+
+        2000
+
+    );
+}
+
+sendRegistration();
