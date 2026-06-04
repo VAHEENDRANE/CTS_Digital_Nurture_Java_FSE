@@ -459,3 +459,49 @@ cancelBtn.onclick =
         statusMessage.innerHTML =
             "Registration Cancelled!";
     };
+
+    // ======================================
+// Event Handling
+// ======================================
+
+// onclick
+
+registerBtn.onclick = function () {
+
+    statusMessage.innerHTML =
+        "Registration Successful!";
+};
+
+
+// onchange
+
+const categoryFilter =
+    document.querySelector(
+        "#categoryFilter"
+    );
+
+categoryFilter.onchange =
+    function () {
+
+        console.log(
+            "Selected Category: " +
+            categoryFilter.value
+        );
+    };
+
+
+// keydown
+
+const searchBox =
+    document.querySelector(
+        "#searchBox"
+    );
+
+searchBox.onkeydown =
+    function (event) {
+
+        console.log(
+            "Key Pressed: " +
+            event.key
+        );
+    };
