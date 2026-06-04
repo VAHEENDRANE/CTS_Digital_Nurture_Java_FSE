@@ -579,3 +579,107 @@ async function loadEvents() {
 }
 
 loadEvents();
+// ======================================
+// Modern JavaScript Features
+// ======================================
+
+
+// let and const
+
+let totalRegistrations = 0;
+
+const portalName =
+    "Local Community Event Portal";
+
+console.log(
+    portalName
+);
+
+
+// Default Parameters
+
+function createEvent(
+
+    eventName = "Community Event",
+
+    category = "General"
+
+) {
+
+    console.log(
+
+        `Event: ${eventName}
+         Category: ${category}`
+
+    );
+}
+
+createEvent();
+
+createEvent(
+    "Music Festival",
+    "Music"
+);
+
+
+// Destructuring
+
+const eventDetails = {
+
+    name: "Food Carnival",
+
+    category: "Food",
+
+    seats: 100
+};
+
+const {
+
+    name,
+
+    category,
+
+    seats
+
+} = eventDetails;
+
+console.log(
+    name
+);
+
+console.log(
+    category
+);
+
+console.log(
+    seats
+);
+
+
+// Spread Operator
+
+const originalEvents = [
+
+    "Music Festival",
+
+    "Food Carnival",
+
+    "Sports Meet"
+];
+
+const clonedEvents = [
+
+    ...originalEvents
+];
+
+const filteredEvents =
+
+    clonedEvents.filter(
+
+        event =>
+            event.includes("Music")
+    );
+
+console.log(
+    filteredEvents
+);
