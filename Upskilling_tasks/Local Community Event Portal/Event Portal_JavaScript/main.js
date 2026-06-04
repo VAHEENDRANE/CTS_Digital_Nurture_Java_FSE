@@ -505,3 +505,77 @@ searchBox.onkeydown =
             event.key
         );
     };
+
+    // ======================================
+// Async JS, Promises, Async/Await
+// ======================================
+
+// Loading Spinner
+
+console.log(
+    "Loading Events..."
+);
+
+
+// Promise using fetch()
+
+fetch(
+    "https://jsonplaceholder.typicode.com/users"
+)
+
+.then(response => response.json())
+
+.then(data => {
+
+    console.log(
+        "Events Loaded Using .then()"
+    );
+
+    console.log(data);
+})
+
+.catch(error => {
+
+    console.log(
+        "Error:",
+        error
+    );
+});
+
+
+// Async / Await
+
+async function loadEvents() {
+
+    try {
+
+        console.log(
+            "Loading Events Using Async/Await..."
+        );
+
+        const response =
+            await fetch(
+                "https://jsonplaceholder.typicode.com/users"
+            );
+
+        const data =
+            await response.json();
+
+        console.log(
+            "Async/Await Result:"
+        );
+
+        console.log(data);
+
+    }
+
+    catch (error) {
+
+        console.log(
+            "Async/Await Error:",
+            error
+        );
+    }
+}
+
+loadEvents();
