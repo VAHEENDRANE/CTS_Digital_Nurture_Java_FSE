@@ -683,3 +683,87 @@ const filteredEvents =
 console.log(
     filteredEvents
 );
+// ======================================
+// Working with Forms
+// ======================================
+
+const registrationForm =
+    document.getElementById(
+        "registrationForm"
+    );
+
+registrationForm.addEventListener(
+
+    "submit",
+
+    function (event) {
+
+        // preventDefault()
+
+        event.preventDefault();
+
+        // Clear Previous Errors
+
+        document.getElementById(
+            "nameError"
+        ).innerHTML = "";
+
+        document.getElementById(
+            "emailError"
+        ).innerHTML = "";
+
+        // form.elements
+
+        const name =
+            registrationForm.elements[
+                "userName"
+            ].value;
+
+        const email =
+            registrationForm.elements[
+                "email"
+            ].value;
+
+        const selectedEvent =
+            registrationForm.elements[
+                "selectedEvent"
+            ].value;
+
+        let valid = true;
+
+        // Validation
+
+        if (name.trim() === "") {
+
+            document.getElementById(
+                "nameError"
+            ).innerHTML =
+                "Name is required";
+
+            valid = false;
+        }
+
+        if (!email.includes("@")) {
+
+            document.getElementById(
+                "emailError"
+            ).innerHTML =
+                "Enter a valid email";
+
+            valid = false;
+        }
+
+        if (valid) {
+
+            console.log(
+                "Registration Successful"
+            );
+
+            console.log(
+                name,
+                email,
+                selectedEvent
+            );
+        }
+    }
+);

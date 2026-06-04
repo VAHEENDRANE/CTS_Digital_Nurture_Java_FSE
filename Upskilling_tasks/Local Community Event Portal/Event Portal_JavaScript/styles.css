@@ -504,3 +504,19 @@ textarea:focus {
     font-size: 3vw;
     padding: 2vh;
 }
+
+/* =========================
+   Form Error Messages
+========================= */
+
+#nameError,
+#emailError {
+
+    color: red;
+
+    font-size: 14px;
+
+    display: block;
+
+    margin-bottom: 10px;
+}

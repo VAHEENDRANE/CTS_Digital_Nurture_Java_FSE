@@ -196,19 +196,24 @@
 
             <h2>Event Registration & Feedback Form</h2>
 
-            <form>
+           <form id="registrationForm">
 
                 <label>Name</label>
                 <input type="text"
-                       placeholder="Enter your name"
-                       required
-                       autofocus>
+       name="userName"
+       placeholder="Enter your name"
+       required
+       autofocus>
+
+<span id="nameError"></span>
 
                 <label>Email</label>
                 <input type="email"
-                       placeholder="Enter your email"
-                       required>
+       name="email"
+       placeholder="Enter your email"
+       required>
 
+<span id="emailError"></span>
                 <label>Phone Number</label>
                 <input type="text"
                        id="phone"
@@ -221,7 +226,11 @@
                 <input type="date" required>
 
                 <label>Select Event</label>
-                <select id="eventType" required onchange="showFee()">
+                <select
+        id="eventType"
+        name="selectedEvent"
+        required
+        onchange="showFee()">
                     <option value="">Select Event</option>
                     <option value="100">Music Festival</option>
                     <option value="200">Food Carnival</option>
