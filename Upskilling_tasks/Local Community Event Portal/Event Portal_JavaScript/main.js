@@ -398,3 +398,64 @@ console.log(
 console.log(
     displayCards
 );
+
+// ======================================
+// DOM Manipulation
+// ======================================
+
+// querySelector()
+
+const eventContainer =
+    document.querySelector(
+        "#eventContainer"
+    );
+
+
+// createElement()
+
+const eventCard =
+    document.createElement(
+        "div"
+    );
+
+eventCard.innerHTML =
+    "<h3>Music Festival</h3><p>Seats Available: 50</p>";
+
+
+// appendChild()
+
+eventContainer.appendChild(
+    eventCard
+);
+
+
+// Update UI
+
+const registerBtn =
+    document.querySelector(
+        "#registerBtn"
+    );
+
+const cancelBtn =
+    document.querySelector(
+        "#cancelBtn"
+    );
+
+const statusMessage =
+    document.querySelector(
+        "#statusMessage"
+    );
+
+registerBtn.onclick =
+    function () {
+
+        statusMessage.innerHTML =
+            "Registration Successful!";
+    };
+
+cancelBtn.onclick =
+    function () {
+
+        statusMessage.innerHTML =
+            "Registration Cancelled!";
+    };
